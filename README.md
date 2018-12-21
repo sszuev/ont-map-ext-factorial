@@ -2,13 +2,13 @@
 
 ## Structure:
 * main:
-    - ru.avicomp.map.spin.functions.avc.factorial - ARQ function to calculate `n!` in RDF
-    - ru.avicomp.map.spin.system.FactorialOntMAPExtension - a module initializer
-    - resources/etc/avc.factorial.ttl - SPIN library with function description
-    - resources/META-INF/services/org.apache.jena.sys.JenaSubsystemLifecycle - a resource file with a reference to module initializer, see [Apache Jena - The Standard Subsystem Registry](http://jena.apache.org/documentation/notes/system-initialization.html#the-standard-subsystem-registry)
+    - `ru.avicomp.map.spin.functions.avc.factorial` - ARQ function to calculate `n!` in RDF
+    - `ru.avicomp.map.spin.system.FactorialOntMAPExtension` - a module initializer
+    - `resources/etc/avc.factorial.ttl` - SPIN library with function description
+    - `resources/META-INF/services/org.apache.jena.sys.JenaSubsystemLifecycle` - a resource file with a reference to module initializer, see [Apache Jena - The Standard Subsystem Registry](http://jena.apache.org/documentation/notes/system-initialization.html#the-standard-subsystem-registry)
 * tests:
-    - ru.avicomp.map.tests.FactorialMapTest - a test, that builds a mapping and runs inference
-    - resources/log4j.properties - logging settings
+    - `ru.avicomp.map.tests.FactorialMapTest` - a test, that builds a mapping and runs inference
+    - `resources/log4j.properties` - logging settings
 
 ## Dependencies 
  - **[ONT-MAP](https://github.com/avicomp/ont-map)** the [OWL2](https://www.w3.org/TR/owl2-overview/) ontology to ontology data mapper (builder and inference engine) 
