@@ -1,0 +1,26 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix spin:  <http://spinrdf.org/spin#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix math:  <http://www.w3.org/2005/xpath-functions/math#> .
+@prefix spinmap: <http://spinrdf.org/spinmap#> .
+@prefix sp:    <http://spinrdf.org/sp#> .
+@prefix spl:   <http://spinrdf.org/spl#> .
+@prefix avc:   <http://avc.ru/spin#> .
+
+<http://avc.ru/factorial>  a  owl:Ontology ;
+        rdfs:comment     "Factorial impl here." ;
+        owl:imports      <http://avc.ru/spin> .
+
+math:factorial  a                spin:Function ;
+        rdfs:comment        "Computes n!." ;
+        rdfs:label          "arccosine" ;
+        rdfs:subClassOf     spl:MathematicalFunctions ;
+        spin:constraint     [ a              spl:Argument ;
+                              spl:predicate  sp:arg1 ;
+                              rdfs:comment      "n to compute n!." ;
+                              spl:valueType  xsd:integer
+                            ] ;
+        spin:returnType     xsd:double ;
+        spinmap:shortLabel  "factorial" .
