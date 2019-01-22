@@ -14,11 +14,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
-            <groupId>ru.avicomp</groupId>
-            <artifactId>ontmap</artifactId>
-            <version>1.0.4-SNAPSHOT</version>
+            <groupId>com.github.avicomp</groupId>
+            <artifactId>ont-map</artifactId>
+            <version>1.0.6-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
