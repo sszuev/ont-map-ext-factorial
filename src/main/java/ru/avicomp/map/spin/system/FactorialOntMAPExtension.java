@@ -16,17 +16,19 @@ import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.util.Collections;
 import java.util.Map;
+import java.util.function.Supplier;
 
 /**
  * See {@code /etc/avc.factorial.ttl} spin-description and {@link factorial} ARQ function.
  * Created by @ssz on 21.12.2018.
  */
+@SuppressWarnings("WeakerAccess")
 public class FactorialOntMAPExtension implements Extension {
     private static final Logger LOGGER = LoggerFactory.getLogger(FactorialOntMAPExtension.class);
 
     @Override
-    public Map<String, Graph> graphs() {
-        return Collections.singletonMap("http://avc.ru/factorial", getGraph());
+    public Map<String, Supplier<Graph>> graphs() {
+        return Collections.singletonMap("http://avc.ru/factorial", FactorialOntMAPExtension::loadGraph);
     }
 
     @Override
@@ -34,7 +36,7 @@ public class FactorialOntMAPExtension implements Extension {
         return Collections.singletonMap(MATH.NS + "factorial", factorial.class);
     }
 
-    public Graph getGraph() {
+    public static Graph loadGraph() {
         Graph res = Factory.createGraphMem();
         try (InputStream in = FactorialOntMAPExtension.class.getResourceAsStream("/etc/avc.factorial.ttl")) {
             RDFDataMgr.read(res, in, null, Lang.TURTLE);

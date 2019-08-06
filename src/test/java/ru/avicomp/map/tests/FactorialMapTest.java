@@ -63,7 +63,7 @@ public class FactorialMapTest {
         LOGGER.debug("After inference <{}>:\n{}", ns, asString(o));
 
         // validate:
-        o.listNamedIndividuals().forEach(i -> {
+        o.individuals().forEach(i -> {
             Assert.assertEquals(2, i.positiveAssertions().count());
             int num = Iter.findFirst(i.listProperties(p1).mapWith(Statement::getInt))
                     .orElseThrow(AssertionError::new);
